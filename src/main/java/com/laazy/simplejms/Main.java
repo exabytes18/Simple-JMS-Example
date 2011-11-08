@@ -49,7 +49,7 @@ public class Main {
 		final MessageConsumer myMessageConsumer = aSession.createConsumer(myTopic);
 		myMessageConsumer.setMessageListener(new MessageListener() {
 			@Override
-			public void onMessage(javax.jms.Message aMessage) {
+			public void onMessage(Message aMessage) {
 				if (aMessage instanceof TextMessage) {
 					try {
 						final XYZ myXYZ = OBJECT_MAPPER.readValue(((TextMessage) aMessage).getText(), XYZ.class);
